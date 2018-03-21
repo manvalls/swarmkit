@@ -232,6 +232,9 @@ message ContainerSpec {
 	// they will be decided by the modes passed in the mount definition.
 	bool read_only = 19;
 
+	// Privileged adds all capabilities to the container
+	bool privileged = 40;
+
 	// StopSignal defines the signal to stop the container.
 	string stop_signal = 20;
 
@@ -315,7 +318,7 @@ message ContainerSpec {
 	// Runtimes that don't support it ignore that field
 	Isolation isolation = 24;
 
-	// PidsLimit prevents from OS resource damage by applications inside the container 
+	// PidsLimit prevents from OS resource damage by applications inside the container
 	// using fork bomb attack.
 	int64 pidsLimit = 25;
 }
